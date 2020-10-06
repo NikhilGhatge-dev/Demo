@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h3 align="center">Student Data</h3>
+<table border="1"  align="center">
+	<tr>
+	   <td>Id  </td>
+	   <td>NAME </td>
+	   <td>EMAIL </td>
+	   <td>GENDER </td>
+	   <td>ADDRESS </td>
+	   <td>SUBJECTS</td>
+ 	   <td>SLOTS   </td>	
+ 	   <td>OPERTIONS</td>
+	</tr>
+	<tr th:each="ob:${list}">
+	    <td th:text="${ob.id}"></td>
+	    <td th:text="${ob.name}"></td>
+	    <td th:text="${ob.marks}"></td>
+	    <td th:text="${ob.addrs}"></td>
+	    <td th:text="${ob.email}"></td>
+	    <td th:text="${ob.subject}"></td>
+	    <td th:text="${ob.grade}"></td>
+	    <td>
+	    	<a th:href="@{/student/delete?id={data}(data=${ob.id})}">DELETE</a>
+	    	<a th:href="@{/student/edit?id={data}(data=${ob.id})}">|EDIT</a>
+	    </td>
+	</tr>
+</table>
+<a href="EmployeeRegister">Home Page</a>
+</body>
+</html>

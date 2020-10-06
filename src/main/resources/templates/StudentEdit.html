@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h3>Student Edit</h3>
+<form th:action="@{/student/update}" method="POST" th:object="${student}">
+<pre>
+  ID      ::<input type="text" th:field="*{id}" readonly/>
+  NAME    ::<input type="text" th:field="*{name}" readonly/>
+  Marks(%)::<input type="text" th:field="*{marks}"/>
+  Address ::<input type="text" th:field="*{addrs}"/>
+  EMAIL   ::<input type="text" th:field="*{email}"/>
+  GENDER  ::<input type="radio" th:field="*{gender}" value="male"/>Male<input type="radio" th:field="*{gender}" value="female"/>Female
+  Subjects::
+            <input type="checkbox" th:field="*{subject}" value="c"/> C language
+  			<input type="checkbox" th:field="*{subject}" value="cpp"/> C++
+  			<input type="checkbox" th:field="*{subject}" value="java"/> JAVA
+  			<input type="checkbox" th:field="*{subject}" value="asp.net"/> C#
+  			<input type="checkbox" th:field="*{subject}" value="python"/>PYTHON
+  Grade   ::<select th:field="*{grade}" multiple="multiple">
+   			<option value="A">A+</option>
+  			<option value="B">B+</option>
+  			<option value="C">C+</option>
+  			<option value="fail">FAIL</option>
+            </select>
+  <input type="submit" value="Add Updation"/>    <input type="reset" value="Cancel"/>  
+</pre>
+</form>
+</body>
+</html>
